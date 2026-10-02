@@ -14,7 +14,7 @@ import { useSiteAnimations } from './lib/useSiteAnimations'
 function App() {
   useSiteAnimations()
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-900 antialiased">
+    <div className="min-h-screen bg-white font-sans text-black-90 antialiased">
       <Navbar />
       <main>
         <Hero />
