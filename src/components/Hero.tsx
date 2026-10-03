@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
+import { ArrowRight, Bell } from 'lucide-react'
 import heroSectionUrl from '../assets/images/Hero-section.png'
 import productPageUrl from '../assets/images/product-page.png'
 
@@ -53,15 +54,22 @@ export function Hero() {
           market.
         </p>
 
-        <div data-hero-cta className="mt-10 flex justify-center">
+        <div data-hero-cta className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href="#"
             className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-b from-primary-75 to-primary-100 px-7 py-4 text-base font-semibold text-white shadow-xl shadow-primary-100/40 ring-1 ring-white/30 transition-transform hover:scale-105"
           >
-            Join our Waitlist
+            Explore Hive
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 transition-transform group-hover:translate-x-1">
-              →
+              <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
             </span>
+          </a>
+          <a
+            href="#"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-base font-semibold text-black-90 shadow-md shadow-black/5 ring-1 ring-black-10 transition-colors hover:bg-black-5"
+          >
+            <Bell className="h-4 w-4 text-black-50" strokeWidth={2.5} />
+            Join Waitlist for Hive Invest
           </a>
         </div>
       </div>
