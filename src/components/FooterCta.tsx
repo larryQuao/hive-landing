@@ -42,7 +42,7 @@ export function FooterCta() {
             />
             <div className="flex flex-col items-start gap-8 md:flex-row md:items-center md:gap-10">
               <div className="flex flex-wrap gap-8 text-sm text-black-40">
-                {['About Us', 'Products', 'Resources', 'Contact Us'].map((l) => (
+                {['About Us', 'Products', 'Contact Us'].map((l) => (
                   <a key={l} href={l === 'About Us' ? '#about' : l === 'Contact Us' ? '#contact' : '#'} className="transition-colors hover:text-white">
                     {l}
                   </a>
