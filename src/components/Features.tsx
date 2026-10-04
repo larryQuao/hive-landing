@@ -1,5 +1,6 @@
 import discoverNTransactUrl from '../assets/images/discoverntransact.png'
 import investNGetFundingUrl from '../assets/images/investngetfunding.png'
+import centralisedEnd2EndUrl from '../assets/images/centralisedend2end.png'
 
 function CardIllustration({ variant }: { variant: 0 | 1 | 2 }) {
   if (variant === 0) {
@@ -25,28 +26,12 @@ function CardIllustration({ variant }: { variant: 0 | 1 | 2 }) {
     )
   }
   return (
-    <div className="relative h-56 overflow-hidden rounded-xl bg-gradient-to-b from-primary-10 to-primary-30">
-      {/* concentric circles */}
-      <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary-50/60" />
-      <div className="absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary-50/70" />
-      <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary-50/80" />
-      {/* chat bubble */}
-      <div className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl bg-gradient-to-b from-primary-75 to-primary-100 text-2xl shadow-lg shadow-primary-100/40">
-        💬
-      </div>
-      {/* avatars */}
-      {[
-        'right-8 top-6',
-        'left-8 top-16',
-        'left-12 bottom-8',
-      ].map((pos) => (
-        <div
-          key={pos}
-          className={`absolute ${pos} flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary-30 to-primary-50 text-lg ring-2 ring-white`}
-        >
-          👤
-        </div>
-      ))}
+    <div className="h-56 overflow-hidden rounded-xl">
+      <img
+        src={centralisedEnd2EndUrl}
+        alt="Hive platform connecting everyone in the real estate process"
+        className="h-full w-full object-cover"
+      />
     </div>
   )
 }

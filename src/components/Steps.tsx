@@ -1,4 +1,4 @@
-import { AppMockup } from './AppMockup'
+import searchUrl from '../assets/images/Search.png'
 
 const steps = [
   {
@@ -43,10 +43,11 @@ export function Steps() {
 
         {/* App preview inside a large soft card */}
         <div data-reveal="scale" className="mt-20 rounded-[2.5rem] bg-gradient-to-b from-black-5 to-primary-10/60 p-6 sm:p-14">
-          <AppMockup className="mx-auto max-w-3xl" />
-          <p className="mt-10 text-center text-sm text-black-50">
-            Available on the Web now. Coming soon on PlayStore.&rdquo;
-          </p>
+          <img
+            src={searchUrl}
+            alt="Hive search page with property filters and categories"
+            className="mx-auto w-full max-w-3xl rounded-xl shadow-2xl shadow-black-90/20"
+          />
         </div>
       </div>
     </section>
