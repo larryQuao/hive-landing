@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Sync-layer artifacts that cannot be deleted (reappear on delete in this environment)
+*:Zone.Identifier
+/dropdown-*.png
+/src/assets/images/signupmodal.png
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
