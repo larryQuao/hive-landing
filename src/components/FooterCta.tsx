@@ -1,5 +1,5 @@
-import { AppMockup } from './AppMockup'
 import logoUrl from '../assets/Hive-logo.png'
+import heroSectionUrl from '../assets/images/Hero-section.png'
 
 const socials = [
   {
@@ -24,7 +24,11 @@ export function FooterCta() {
   return (
     <footer className="relative overflow-hidden bg-gradient-to-b from-white via-primary-30 to-primary-50 px-4 pt-20">
       <div data-reveal="scale" className="mx-auto max-w-4xl">
-        <AppMockup className="rounded-b-none" />
+        <img
+          src={heroSectionUrl}
+          alt="Hive web app home page"
+          className="w-full rounded-t-2xl rounded-b-none shadow-2xl shadow-black-90/20"
+        />
       </div>
 
       {/* dark footer */}
