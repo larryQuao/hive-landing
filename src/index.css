@@ -24,3 +24,9 @@
   --color-black-100: #000000;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+

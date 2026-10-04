@@ -72,7 +72,7 @@ export function Navbar() {
     return () => ctx.revert()
   }, [])
 
-  const links = ['Why Hive', 'Products', 'Resources', 'Contact Us']
+  const links = ['About Us', 'Products', 'Resources', 'Contact Us']
   return (
     <header ref={nav} className="fixed inset-x-0 top-4 z-50 flex justify-center px-4">
       <nav className="flex w-full max-w-3xl items-center justify-between rounded-full bg-white/80 px-6 py-3 shadow-lg shadow-black/5 backdrop-blur-md">
@@ -86,7 +86,7 @@ export function Navbar() {
             ) : (
               <a
                 key={link}
-                href="#"
+                href={link === 'About Us' ? '#about' : link === 'Contact Us' ? '#contact' : '#'}
                 className="text-sm font-medium text-black-60 transition-colors hover:text-black-90"
               >
                 {link}

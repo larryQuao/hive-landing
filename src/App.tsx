@@ -1,5 +1,7 @@
+import { AboutUs } from './components/AboutUs'
 import { AppPreview } from './components/AppPreview'
 import { Audiences } from './components/Audiences'
+import { ContactUs } from './components/ContactUs'
 import { DarkFeatures } from './components/DarkFeatures'
 import { Features } from './components/Features'
 import { FooterCta } from './components/FooterCta'
@@ -23,9 +25,11 @@ function App() {
         <Platform />
         <DarkFeatures />
         <Testimonial />
+        <AboutUs />
         <Audiences />
         <AppPreview />
         <SupportLinks />
+        <ContactUs />
       </main>
       <FooterCta />
     </div>
