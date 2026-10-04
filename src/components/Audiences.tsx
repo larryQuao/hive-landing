@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 const audiences = [
   {
     title: 'Homeseekers',
@@ -46,15 +44,13 @@ const audiences = [
 ]
 
 export function Audiences() {
-  const [on, setOn] = useState(true)
-
   return (
     <section className="bg-white px-4 pb-24">
       <div className="mx-auto max-w-6xl">
         <p data-reveal className="text-center text-lg text-black-60">
           Find your next property or client in just a few simple steps.
         </p>
-        <div data-reveal data-reveal-delay="0.1" className="mt-8 flex items-center justify-center gap-3">
+        {/* <div data-reveal data-reveal-delay="0.1" className="mt-8 flex items-center justify-center gap-3">
           <span className="text-sm font-medium text-black-50">Start Here</span>
           <button
             type="button"
@@ -70,7 +66,7 @@ export function Audiences() {
               }`}
             />
           </button>
-        </div>
+        </div> */}
 
         <div data-stagger className="mt-10 grid gap-6 md:grid-cols-2">
           {audiences.map((a) => (

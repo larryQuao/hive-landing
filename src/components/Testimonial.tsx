@@ -25,11 +25,10 @@ export function Testimonial() {
           </div>
         </div>
         <blockquote className="mt-6 text-2xl font-medium leading-relaxed text-black-90">
-          &ldquo;Before Draftr, we juggled five different tools to manage clients, tasks, and
-          reports. Now it&apos;s all in one place. We launched 3 campaigns faster this quarter than
-          ever before.&rdquo;
+          &ldquo;Before Hive, managing listings, leads, and client inquiries meant jumping between different tools. Now, everything is in one place. We can track deals, filter for the
+          right Opportunities, and respond to serious prospect faster.&rdquo;
         </blockquote>
-        <p className="mt-5 text-sm text-black-50">Sofia Delgado, Product Manager, NovaTech</p>
+        <p className="mt-5 text-sm text-black-50">Dennis, Founder, El City Estate</p>
       </div>
     </section>
   )

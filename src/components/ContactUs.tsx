@@ -1,24 +1,24 @@
-import { Mail, MapPin, Phone, Send } from 'lucide-react'
+import { Mail, Phone, Send } from 'lucide-react'
 
 const details = [
   {
     icon: Mail,
     label: 'Email us',
-    value: 'support@hive.com',
-    href: 'mailto:support@hive.com',
+    value: 'hiveghagency@gmail.com',
+    href: 'mailto:hiveghagency@gmail.com',
   },
   {
     icon: Phone,
-    label: 'Call us',
-    value: '+233 55 123 4567',
-    href: 'tel:+233551234567',
+    label: 'Call us / WhatsApp Us',
+    value: '+233 24 130 2496',
+    href: 'tel:+233241302496',
   },
-  {
-    icon: MapPin,
-    label: 'Visit us',
-    value: 'Accra, Ghana',
-    href: '#',
-  },
+    // {
+    //   icon: MapPin,
+    //   label: 'Visit us',
+    //   value: 'Accra, Ghana',
+    //   href: '#',
+    // },
 ]
 
 export function ContactUs() {
