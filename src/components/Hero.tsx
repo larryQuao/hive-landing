@@ -65,7 +65,9 @@ export function Hero() {
             </span>
           </a>
           <a
-            href="#"
+            href="https://hive-invest.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-base font-semibold text-black-90 shadow-md shadow-black/5 ring-1 ring-black-10 transition-colors hover:bg-black-5"
           >
             <Bell className="h-4 w-4 text-black-50" strokeWidth={2.5} />

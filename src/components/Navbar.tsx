@@ -44,7 +44,9 @@ function ProductsDropdown() {
               <span className="text-sm font-medium text-black-60">Hive</span>
             </a>
             <a
-              href="#"
+              href="https://hive-invest.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-black-5"
             >
