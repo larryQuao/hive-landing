@@ -53,7 +53,18 @@ export function ContactUs() {
         }),
       })
 
-      const result = await response.json()
+      // The API always replies with JSON; guard against non-JSON
+      // responses (for example when the endpoint is unavailable).
+      const raw = await response.text()
+      let result: { message?: string } = {}
+
+      try {
+        result = raw ? JSON.parse(raw) : {}
+      } catch {
+        throw new Error(
+          'Unable to submit your message. Please try again.'
+        )
+      }
 
       if (!response.ok) {
         throw new Error(

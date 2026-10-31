@@ -38,9 +38,6 @@ export default async function handler(
         // Extract and sanitize form fields
         const fullName = clean(body.fullName, 150);
         const email = clean(body.email, 254).toLowerCase();
-        const phone = clean(body.phone, 30);
-        const userType = clean(body.userType, 100);
-        const subject = clean(body.subject, 200);
         const message = clean(body.message, 5000);
 
         // Validate required fields

@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Environment variables
+.env
+.env.*
+!.env.example
+
 # Sync-layer artifacts that cannot be deleted (reappear on delete in this environment)
 *:Zone.Identifier
 /dropdown-*.png
