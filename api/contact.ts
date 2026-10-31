@@ -1,6 +1,7 @@
 
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { getGoogleSheets } from "./_lib/google-sheets";
+import { randomUUID } from "node:crypto";
+import { appendLead } from "./_lib/google-sheets";
 
 // Clean and validate incoming text values
 function clean(value: unknown, maxLength: number): string {
@@ -58,27 +59,15 @@ export default async function handler(
             });
         }
 
-        // Connect to Google Sheets
-        const { sheets, spreadsheetId } = getGoogleSheets();
-
         // Append submission as a new spreadsheet row
-        await sheets.spreadsheets.values.append({
-            spreadsheetId,
-            range: "'Leads'!A:F",
-            valueInputOption: "RAW",
-            insertDataOption: "INSERT_ROWS",
-
-            requestBody: {
-                values: [[
-                    crypto.randomUUID(),
-                    new Date().toISOString(),
-                    fullName,
-                    email,
-                    message,
-                    "New",
-                ]],
-            },
-        });
+        await appendLead([
+            randomUUID(),
+            new Date().toISOString(),
+            fullName,
+            email,
+            message,
+            "New",
+        ]);
 
         // Return successful response
         return res.status(200).json({
