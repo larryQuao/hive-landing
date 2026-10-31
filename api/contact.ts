@@ -89,9 +89,16 @@ export default async function handler(
     } catch (error) {
         console.error("Contact form submission error:", error);
 
-        return res.status(500).json({
+        // Missing credentials are a deployment problem, not a user error
+        const isConfigError =
+            error instanceof Error &&
+            error.message === "Missing Google Sheets environment variables.";
+
+        return res.status(isConfigError ? 503 : 500).json({
             success: false,
-            message: "Unable to submit your message. Please try again.",
+            message: isConfigError
+                ? "The contact form is not configured yet. Please email us directly instead."
+                : "Unable to submit your message. Please try again.",
         });
     }
 }

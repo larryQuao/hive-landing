@@ -1,10 +1,19 @@
 
 import { google } from "googleapis";
 
+// Values pasted into environment variable settings often keep their
+// surrounding quotes or trailing whitespace; normalize before use.
+function normalize(value: string | undefined): string {
+  return (value ?? "").trim().replace(/^"(.*)"$/s, "$1").trim();
+}
+
 export function getGoogleSheets() {
-  const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-  const privateKey = process.env.GOOGLE_PRIVATE_KEY;
-  const spreadsheetId = process.env.GOOGLE_SHEET_ID;
+  const email = normalize(process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL);
+  const privateKey = normalize(process.env.GOOGLE_PRIVATE_KEY).replace(
+    /\\n/g,
+    "\n"
+  );
+  const spreadsheetId = normalize(process.env.GOOGLE_SHEET_ID);
 
   // Check that all environment variables exist
   if (!email || !privateKey || !spreadsheetId) {
@@ -17,7 +26,7 @@ export function getGoogleSheets() {
   const auth = new google.auth.GoogleAuth({
     credentials: {
       client_email: email,
-      private_key: privateKey.replace(/\\n/g, "\n"),
+      private_key: privateKey,
     },
     scopes: [
       "https://www.googleapis.com/auth/spreadsheets",
