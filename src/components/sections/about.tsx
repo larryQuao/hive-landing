@@ -17,18 +17,6 @@ export function About() {
             Property in Ghana should be simple to find, safe to pay for and straightforward to invest in.
             That is the standard we hold ourselves to.
           </p>
-
-          <div data-reveal className="mt-14 grid gap-8 text-[17px] leading-relaxed text-ink-muted sm:grid-cols-2">
-            <p>
-              Home seekers face uncertainty, scams and poor information. Agents work with manual tools
-              and little credibility. Owners struggle to keep their properties let, and investors and
-              lenders have no clear way in.
-            </p>
-            <p>
-              Hive brings all of them together through verified people, clear information and payments
-              held in escrow, so every side can act with confidence.
-            </p>
-          </div>
         </div>
       </Container>
     </section>
