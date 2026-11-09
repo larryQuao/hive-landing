@@ -3,7 +3,7 @@
  * and the home page sections. Each vertical's details live in verticals.ts.
  */
 export const contact = {
-  email: 'hiveghagency@gmail.com',
+  email: 'info@hiveagency.online',
   phone: '+233 24 130 2496',
   phoneHref: 'tel:+233241302496',
   whatsappHref: 'https://wa.me/233241302496',

@@ -3,11 +3,9 @@ import {
   Bank,
   Buildings,
   ChartLineUp,
-  ClipboardText,
   Crane,
   FileText,
   GlobeHemisphereEast,
-  Hammer,
   HandCoins,
   HardHat,
   House,
@@ -17,23 +15,18 @@ import {
   SealCheck,
   ShieldCheck,
   SlidersHorizontal,
-  SprayBottle,
   Stack,
   Star,
-  Storefront,
   UsersThree,
   Wallet,
-  Wrench,
   Briefcase,
   CalendarCheck,
 } from '@phosphor-icons/react'
 import coRentingUrl from '@/assets/photos/verticals/co-renting.webp'
-import commerceUrl from '@/assets/photos/verticals/commerce.webp'
 import developmentUrl from '@/assets/photos/verticals/development.webp'
 import financingUrl from '@/assets/photos/verticals/financing.webp'
-import hiveCoreUrl from '@/assets/photos/verticals/hive-core.webp'
+import hiveUrl from '@/assets/photos/verticals/hive.webp'
 import hiveInvestUrl from '@/assets/photos/verticals/hive-invest.webp'
-import serviceProvidersUrl from '@/assets/photos/verticals/service-providers.webp'
 
 export type Vertical = {
   /** Page address: /verticals/<slug>. */
@@ -57,11 +50,11 @@ export type Vertical = {
  */
 export const VERTICALS: Vertical[] = [
   {
-    slug: 'hive-core',
+    slug: 'hive',
     href: '#',
-    name: 'Hive Core',
+    name: 'Hive',
     icon: Buildings,
-    image: hiveCoreUrl,
+    image: hiveUrl,
     summary: 'Our property marketplace. Verified homes to rent, buy or stay in, with payments held in escrow.',
     intro:
       'Our property marketplace. Find verified homes to rent, buy or stay in, and pay safely, with your money held in escrow until the service is delivered.',
@@ -121,25 +114,6 @@ export const VERTICALS: Vertical[] = [
     summary: 'Building, renovation and smart home integration.',
     intro: 'Building new homes and making existing ones better.',
     points: [{ icon: Crane, text: 'New builds.' }, { icon: PaintRoller, text: 'Renovation.' }, { icon: Lightbulb, text: 'Smart home integration.' }],
-  },
-  {
-    slug: 'service-providers',
-    href: '#',
-    name: 'Service Providers',
-    icon: Wrench,
-    image: serviceProvidersUrl,
-    summary: 'Vetted professionals for cleaning, repairs and property management.',
-    intro: 'Vetted professionals to look after a property, so owners and tenants know who they can rely on.',
-    points: [{ icon: SprayBottle, text: 'Cleaning.' }, { icon: Hammer, text: 'Repairs and maintenance.' }, { icon: ClipboardText, text: 'Property management.' }],
-  },
-  {
-    slug: 'commerce',
-    href: '#',
-    name: 'Commerce',
-    icon: Storefront,
-    image: commerceUrl,
-    summary: 'One marketplace for everything a property needs.',
-    intro: 'One marketplace for everything a property needs, from the people who know property.',
   },
 ]
 

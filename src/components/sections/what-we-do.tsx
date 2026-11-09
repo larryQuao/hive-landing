@@ -149,7 +149,7 @@ function Carousel() {
           </Link>
         ))}
       </div>
-      <p className="mt-4 px-6 text-sm text-ink-soft">Swipe to see all seven</p>
+      <p className="mt-4 px-6 text-sm text-ink-soft">Swipe to see all five</p>
     </div>
   )
 }
@@ -185,7 +185,7 @@ export function WhatWeDo() {
             What we do
           </h2>
           <p data-reveal data-reveal-delay="0.1" className="max-w-md text-[17px] leading-relaxed text-ink-muted lg:col-span-5 lg:col-start-8">
-            Seven verticals covering the whole life of a property, all under one name.
+            Five verticals covering the whole life of a property, all under one name.
           </p>
         </div>
 

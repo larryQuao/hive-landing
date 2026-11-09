@@ -1,8 +1,7 @@
 # Hive Agency Ltd: company website
 
 The public site for Hive Agency Ltd. It introduces the company and summarises its
-seven verticals (Hive Core, Hive Invest, Co-renting, Financing, Development,
-Service Providers, Commerce), each with its own page.
+five verticals (Hive, Hive Invest, Co-renting, Financing, Development), each with its own page.
 
 Built with Vite, React, TypeScript and Tailwind CSS. Fonts: Manrope (headings)
 and Inter (text). Colours: Hive blue `#0042e6`, black and white.
