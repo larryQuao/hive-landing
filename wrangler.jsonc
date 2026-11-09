@@ -1,0 +1,18 @@
+// Cloudflare Workers settings. The built site (dist/) is served as static
+// files; /api/* goes to worker/index.ts. Set GOOGLE_SERVICE_ACCOUNT_EMAIL,
+// GOOGLE_PRIVATE_KEY and GOOGLE_SHEET_ID as secrets in the Cloudflare dashboard
+// (Settings → Variables and Secrets), and VITE_SITE_URL as a build variable.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hiveagencyltd",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-11-04",
+  "observability": { "enabled": true },
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // Every page address loads the app; React Router shows the right page.
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  }
+}

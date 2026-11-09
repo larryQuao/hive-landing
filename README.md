@@ -60,5 +60,16 @@ directly or refreshed.
 | `VITE_SITE_URL`  | The site's own address. Needed for link previews, the sitemap and search. |
 | `GOOGLE_*`       | Let the contact form save messages to the team's Google Sheet.       |
 
-The contact form posts to `api/contact.ts`, a Vercel serverless function.
-`pnpm dev` runs it locally too.
+## Hosting
+
+The site runs on Cloudflare Workers, set up in `wrangler.jsonc`. Every push to
+`main` deploys. Cloudflare serves the built pages from `dist/` and sends any
+`/api/*` request to `worker/index.ts`.
+
+In the Cloudflare dashboard (Settings → Variables and Secrets), add the three
+`GOOGLE_*` values as secrets. Add `VITE_SITE_URL` under build variables,
+because it's baked into the pages when they're built.
+
+The contact form's server code is in `server/contact.ts`. The Cloudflare worker
+and `api/contact.ts` both use it. `api/contact.ts` is the Vercel version, which
+`pnpm dev` also uses, so the site could move back to Vercel unchanged.
