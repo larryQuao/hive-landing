@@ -28,6 +28,8 @@ One React app, with pages handled by React Router. All pages are listed in
 | -------------------- | ----------------------------- |
 | `/`                  | `src/pages/home.tsx`          |
 | `/verticals/:slug`   | `src/pages/vertical.tsx`      |
+| `/blog`              | `src/pages/blog.tsx`          |
+| `/blog/:slug`        | `src/pages/post.tsx`          |
 | `/privacy`           | `src/pages/privacy.tsx`       |
 | anything else        | `src/pages/not-found.tsx`     |
 
@@ -47,6 +49,12 @@ directly or refreshed.
   the only place they're defined. Each vertical's `href` is `#` until its real
   address is known. To add one, add an entry there and a photo in
   `src/assets/photos/verticals/`; its page and sitemap entry follow automatically.
+- **Blog posts**: one file per post in `src/content/blog/`, named after the
+  post's address (`before-you-rent-in-accra.tsx` is `/blog/before-you-rent-in-accra`).
+  Copy an existing post to start a new one: set the title, summary, topic
+  (one of `TOPICS` in `src/lib/blog.ts`), date, author and photo, then write
+  the body. It appears on `/blog`, under its topic, on the home page while it's
+  among the newest three, and in the sitemap, with nothing else to change.
 - **Privacy policy**: `src/pages/privacy.tsx` (update the date when it changes).
 - **Share preview**: the title, description and image that WhatsApp, LinkedIn
   and others show are in `index.html`; the image is `public/og-image.jpg`

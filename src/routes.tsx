@@ -19,6 +19,14 @@ export const router = createBrowserRouter([
         lazy: async () => ({ Component: (await import('@/pages/vertical')).VerticalPage }),
       },
       {
+        path: '/blog',
+        lazy: async () => ({ Component: (await import('@/pages/blog')).BlogPage }),
+      },
+      {
+        path: '/blog/:slug',
+        lazy: async () => ({ Component: (await import('@/pages/post')).PostPage }),
+      },
+      {
         path: '/privacy',
         lazy: async () => ({ Component: (await import('@/pages/privacy')).PrivacyPage }),
       },

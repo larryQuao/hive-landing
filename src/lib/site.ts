@@ -23,9 +23,10 @@ export const socials = {
   youtube: '#',
 }
 
-/** Home page sections, used by the header and footer (they also work from other pages). */
+/** Main links in the header and footer: home page sections, plus the blog. */
 export const sectionLinks = [
   { href: '/#about', label: 'About' },
   { href: '/#what-we-do', label: 'What we do' },
+  { href: '/blog', label: 'Blog' },
   { href: '/#contact', label: 'Contact' },
 ]

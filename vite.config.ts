@@ -1,6 +1,6 @@
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import { defineConfig, loadEnv, normalizePath, type Plugin } from 'vite'
@@ -143,8 +143,19 @@ const VERTICAL_SLUGS = [
   ...readFileSync(new URL('./src/lib/verticals.ts', import.meta.url), 'utf8').matchAll(/slug: '([a-z0-9-]+)'/g),
 ].map((m) => m[1])
 
+/** Blog post addresses: one per file in src/content/blog, named after its slug. */
+const POST_SLUGS = readdirSync(new URL('./src/content/blog', import.meta.url))
+  .filter((name) => name.endsWith('.tsx'))
+  .map((name) => name.replace(/\.tsx$/, ''))
+
 /** Pages on the site, for the sitemap. Add new pages from src/routes.tsx here too. */
-const PAGES = ['/', ...VERTICAL_SLUGS.map((slug) => `/verticals/${slug}`), '/privacy']
+const PAGES = [
+  '/',
+  ...VERTICAL_SLUGS.map((slug) => `/verticals/${slug}`),
+  '/blog',
+  ...POST_SLUGS.map((slug) => `/blog/${slug}`),
+  '/privacy',
+]
 
 // Fills in the site's public address (VITE_SITE_URL) where search engines and
 // link previews need a full URL, and writes robots.txt and sitemap.xml.

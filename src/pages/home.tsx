@@ -1,6 +1,7 @@
 import { PageMeta } from '@/components/seo/page-meta'
 import { About } from '@/components/sections/about'
 import { Contact } from '@/components/sections/contact'
+import { FromTheBlog } from '@/components/sections/from-the-blog'
 import { Hero } from '@/components/sections/hero'
 import { Principles } from '@/components/sections/principles'
 import { WhatWeDo } from '@/components/sections/what-we-do'
@@ -15,6 +16,7 @@ export function HomePage() {
       <About />
       <Principles />
       <WhatWeDo />
+      <FromTheBlog />
       <Contact />
     </main>
   )
