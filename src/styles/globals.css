@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/*
+ * Hive Agency Ltd's company site. Hive's colours only: blue, white and black.
+ * Manrope for headings, Inter for everything else.
+ */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand: #0042e6; /* Hive blue, same as hive-core */
+  --color-brand-hover: #0036bd;
+
+  --color-ink: #0a0a0a; /* black: headings, primary text */
+  --color-ink-muted: #5f5f5f; /* body copy */
+  --color-ink-soft: #737373; /* labels, captions (4.7:1 on white) */
+  --color-line: #e6e6e6; /* hairlines */
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-white text-ink;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    @apply bg-brand text-white;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Anchored sections land below the fixed header instead of under it. */
+section[id] {
+  scroll-margin-top: 4.5rem;
+}
+
+/* One clear focus ring for keyboard users: blue on light sections, white on
+   the blue and black ones. Form fields show focus with their own underline. */
+:where(a, button):focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+:where(.bg-brand, .bg-ink) :where(a, button):focus-visible {
+  outline-color: #fff;
+}
+
+/* The writing inside a blog post. */
+.post-body {
+  @apply text-[18px] leading-[1.8] text-ink-muted lg:text-[19px];
+
+  & > * + * {
+    @apply mt-7;
+  }
+  & > :first-child {
+    @apply text-[20px] leading-[1.7] text-ink lg:text-[22px];
+  }
+  & h2 {
+    @apply mt-16 text-[1.75rem] leading-tight font-semibold tracking-[-0.03em] text-ink lg:text-[2rem];
+  }
+  & h3 {
+    @apply mt-12 text-[1.375rem] leading-snug font-semibold tracking-[-0.02em] text-ink;
+  }
+  & h2 + *,
+  & h3 + * {
+    @apply mt-5;
+  }
+  & ul,
+  & ol {
+    @apply space-y-3 pl-6;
+  }
+  & ul {
+    @apply list-disc marker:text-brand;
+  }
+  & ol {
+    @apply list-decimal marker:font-semibold marker:text-ink;
+  }
+  & li {
+    @apply pl-2;
+  }
+  & strong {
+    @apply font-semibold text-ink;
+  }
+  & a {
+    @apply font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-ink;
+  }
+  & blockquote {
+    @apply my-14 border-l-2 border-brand pl-8 font-display text-[1.5rem] leading-snug font-semibold tracking-[-0.025em] text-ink lg:text-[1.75rem];
+  }
+}
+
+/* The thin line that fills while a "What we do" panel waits to move on. */
+@keyframes panel-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* The hero photo's slow drift while it's on screen. */
+@keyframes hero-drift {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.07);
+  }
+}
